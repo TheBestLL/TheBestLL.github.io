@@ -1,0 +1,1 @@
+cp ./../cnpt-blog/pubilc/* .
