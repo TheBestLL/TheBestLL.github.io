@@ -1,1 +1,3 @@
-cp ./../cnpt-blog/pubilc/* .
+#!/bin/bash
+
+cp -rf ./../cnpt-blog/public/* . 
