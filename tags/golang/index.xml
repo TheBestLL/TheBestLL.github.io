@@ -1,31 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>2023s on cnpt-blog</title>
-    <link>https://thebestll.github.io/2023/</link>
-    <description>Recent content in 2023s on cnpt-blog</description>
+    <title>golang on cnpt-blog</title>
+    <link>https://thebestll.github.io/tags/golang/</link>
+    <description>Recent content in golang on cnpt-blog</description>
     <image>
       <title>cnpt-blog</title>
       <url>https://thebestll.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
       <link>https://thebestll.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 13 Jun 2023 20:31:03 +0800</lastBuildDate><atom:link href="https://thebestll.github.io/2023/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Jun 2023 20:31:03 +0800</lastBuildDate><atom:link href="https://thebestll.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>chan学习</title>
       <link>https://thebestll.github.io/2023/chan/</link>
       <pubDate>Tue, 13 Jun 2023 20:31:03 +0800</pubDate>
       
       <guid>https://thebestll.github.io/2023/chan/</guid>
-      <description>学习教员精神,保持终生学习</description>
-    </item>
-    
-    <item>
-      <title>2023学习计划</title>
-      <link>https://thebestll.github.io/2023/plan/</link>
-      <pubDate>Sun, 11 Jun 2023 12:56:03 +0800</pubDate>
-      
-      <guid>https://thebestll.github.io/2023/plan/</guid>
       <description>学习教员精神,保持终生学习</description>
     </item>
     
