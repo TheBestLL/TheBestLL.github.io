@@ -10,7 +10,26 @@
       <link>https://thebestll.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 13 Jun 2023 20:31:03 +0800</lastBuildDate><atom:link href="https://thebestll.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 14 Jun 2023 22:39:35 +0800</lastBuildDate><atom:link href="https://thebestll.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>mutex</title>
+      <link>https://thebestll.github.io/2023/lock/</link>
+      <pubDate>Wed, 14 Jun 2023 22:39:35 +0800</pubDate>
+      
+      <guid>https://thebestll.github.io/2023/lock/</guid>
+      <description>mutex是什么 mutex是golang中处理异步状态的工具 有互斥锁 sync.Mutex 和读写锁 sync.RWMutex
+互斥锁和读写锁的区别 读写锁本身内部实现就是用来互斥锁的技术 互斥锁是简单意义上的上锁开锁概念，且不支持多次上锁 会报错。 读写锁是在互斥锁的基础上封装了业务逻辑，即 允许多次读锁的上锁和开锁 待到读锁都释放时方能运行写锁上锁 写锁上锁时，不允许读锁使用 概念说明 自旋条件: 未获取到锁时循环获取,有次数限制 超过次数进入唤醒队列进行等待 饥饿状态: 竞争状态下老goroutine长时间未获取到锁就会进入饥饿状态,取消自旋机制，采用FIFO 先进先出的办法处理等待队列 正常状态: 非饥饿状态，等待队列的原则是先进先出。若有自旋状态的goroutine则相互竞争获取锁 结构体 //互斥锁 type Mutex struct { state int32 //状态标志位 通过原子操作进行修改 sema uint32 //信号量，用于使用goroutine的阻塞和唤醒 } // state状态标志位实际上是用多个位的状态来进行区分(如下所示,x表示0/1) // xxxxxx... x x x // goroutine排队个数 是否饥饿状态 是否有协程被唤醒 是否上锁 //读写锁 type RWMutex struct { w Mutex // 互斥锁的原理 writerSem uint32 // 写协程的信号量 readerSem uint32 // 读协程的信号量 readerCount int32 // number of pending readers readerWait int32 // number of departing readers } </description>
+    </item>
+    
+    <item>
+      <title>Buffer</title>
+      <link>https://thebestll.github.io/2023/buffer/</link>
+      <pubDate>Tue, 13 Jun 2023 22:49:24 +0800</pubDate>
+      
+      <guid>https://thebestll.github.io/2023/buffer/</guid>
+      <description>学习教员精神,保持终生学习</description>
+    </item>
+    
     <item>
       <title>chan学习</title>
       <link>https://thebestll.github.io/2023/chan/</link>
