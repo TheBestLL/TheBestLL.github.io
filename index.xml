@@ -10,7 +10,16 @@
       <link>https://thebestll.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 14 Jun 2023 22:39:35 +0800</lastBuildDate><atom:link href="https://thebestll.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 15 Jun 2023 21:17:52 +0800</lastBuildDate><atom:link href="https://thebestll.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ebpf</title>
+      <link>https://thebestll.github.io/2023/ebpf/</link>
+      <pubDate>Thu, 15 Jun 2023 21:17:52 +0800</pubDate>
+      
+      <guid>https://thebestll.github.io/2023/ebpf/</guid>
+      <description>学习教员精神,保持终生学习</description>
+    </item>
+    
     <item>
       <title>mutex</title>
       <link>https://thebestll.github.io/2023/lock/</link>
