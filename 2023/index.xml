@@ -10,7 +10,38 @@
       <link>https://thebestll.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 15 Jun 2023 21:17:52 +0800</lastBuildDate><atom:link href="https://thebestll.github.io/2023/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 30 Jul 2023 22:08:12 +0800</lastBuildDate><atom:link href="https://thebestll.github.io/2023/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>K8s</title>
+      <link>https://thebestll.github.io/2023/k8s/</link>
+      <pubDate>Sun, 30 Jul 2023 22:08:12 +0800</pubDate>
+      
+      <guid>https://thebestll.github.io/2023/k8s/</guid>
+      <description>进程信息 master节点上存在的进程信息 Kubernetes API Server 所有涉及到k8s的操作都需要经过API Server进行下发
+Kubernetes Controller Manager 具体控制主进,用来控制k8s的主要运行逻辑
+Kubernetes Scheduler 资源调度进程。例如要运行一个pod,将由scheduler进程根据已知的所有机器的CPU、内存等资源进行考虑后进行分配，选出最佳node节点
+Etcd 集群状态存储，集群所有的组件的状态都保存在这里
+node节点上存在的进程信息 kubelet 和master节点进行通信,协助管理node节点.负责pod的创建、启停等动作
+kube-proxy 负责Service通信和负载均衡
+docker 运行容器
+概念介绍 Pod (原子调度单元) pod是一个虚拟化的概念，是一系列资源的集合(包括容器、存储卷等)，切共享同一个网络命名空间(uts时间功效、ipc进程间通信、net网络名称空间功效)
+控制器 原则:高层控制器通过标签选择器来定位下一层控制器，所以对于高层控制器selector是必填字段，对于底层控制器 label是必填字段
+无状态服务: 无状态服务是指服务实例间没有依赖关系,每个服务都是单独存在的 例如web服务等 有状态服务: 例如redis/mysql等存在数据存储，实例间强关联的服务
+Deployment (管理无状态服务的控制器) deployment ==&amp;gt; replicaset ==&amp;gt; pod ==&amp;gt; container (实体) deployment是也是一层抽象，它是基于relicaSet的二次封装，replicaset是用来管理pod使用的组件。 对比relicaSet,deployment新增了自动缩扩容、滚动更新和回滚等机制。 更高维度的去管理replicaset
+Stateful (管理有状态服务的控制器) Stateful有状态服务,每个Pod有独立的PVC/PV存储组件
+唯一性: 每个Pod会被分配一个唯一序号. 顺序性: Pod启动,更新,销毁是按顺序进行. 稳定的网络标识: Pod主机名,DNS地址不会随着Pod被重新调度而发生变化. 稳定的持久化存储: Pod被重新调度后,仍然能挂载原有的PV,从而保证了数据的完整性和一致性. Job 一次性任务 Job 普通job,运行一次。如果运行时挂了会重新启动运行 CronJob 周期性运行job Service K8S 上的 Service 不是一个应用程序，也不是一个组件，它是一个 iptables dnat 规则，或者 ipvs 规则，Service 只是规则，所以是 ping 不通的，由于是dnat规则或是ipvs规则，可以使用利用端口进行测试</description>
+    </item>
+    
+    <item>
+      <title>k8s构建</title>
+      <link>https://thebestll.github.io/2023/k8sbuild/</link>
+      <pubDate>Mon, 17 Jul 2023 14:17:52 +0800</pubDate>
+      
+      <guid>https://thebestll.github.io/2023/k8sbuild/</guid>
+      <description>背景 新进了俩款容器安全产品需要体验一下,需要搭建一套Ci环境进行体验测试 我目前搭建好了K8S 特此记录一下 整体的部署并不复杂，只是会涉及到一些坑还有部分未了解的知识点 简单罗列出来学习一下
+部署 docker 安装 yum install -y docker 安装docker systemctl restart docker 启动docker 关闭selinux selinux检测过于严格 setenforce 0 &amp;amp;&amp;amp; sed -i &amp;quot;s/SELINUX=enforcing/SELINUX=disabled/g&amp;quot; /etc/selinux/config 关闭防火墙 将网络交由k8s管理 systemctl stop firewalld systemctl disable firewalld 设置hostname 在/etc/hosts 最后一行加上host 127.0.0.1 localhost localhost.localdomain localhost4 localhost4.localdomain4 k8s 关闭 swap 当内存不足时，linux会自动使用swap，将部分内存数据存放到磁盘中，这个这样会使性能下降，为了性能考虑推荐关掉 swapoff -a &amp;amp;&amp;amp; sed -i &#39;/ swap / s/^\(.*\)$/#\1/g&#39; /etc/fstab 安装etcd和Kubernetes yum -y update yum install -y etcd kubernetes 安装containerd k8s 1.24版本后默认使用containerd sudo yum -y install containerd 删除配置 cat /etc/containerd/config.</description>
+    </item>
+    
     <item>
       <title>Ebpf</title>
       <link>https://thebestll.github.io/2023/ebpf/</link>
